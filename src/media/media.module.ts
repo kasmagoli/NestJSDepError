@@ -1,9 +1,9 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { MediaService } from './media/media.service';
+import { Module } from '@nestjs/common';
 import { UsersModule } from 'src/users/users.module';
+import { MediaService } from './media.service';
 
 @Module({
-  imports: [forwardRef(() => UsersModule)],
+  imports: [UsersModule],
   providers: [MediaService],
   exports: [MediaService],
 })
